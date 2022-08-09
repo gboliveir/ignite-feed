@@ -1,0 +1,30 @@
+.wrapper {
+  max-width: 70rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) { /* Tamnho interessante para aplicar responsividade para dispositivos mobile */
+  /*
+    O REM e uma unidade relativa ao tamanho do font-size da página, então se o usuário aumenta o 
+    tamanho da font no dispositivo dele, todo o tamanho da página irá se adaptar a esse tamanho.
+  */
+
+  /*
+    Necessario utilizar valor em percentagem, e não em px (valor bruto). Se essa responsividade
+    for definda com valor bruto o usuário pede a capacidade de alterar o font-size da página com
+    base no font-size do dispositivo
+  */
+  html {
+    font-size: 87.5%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}

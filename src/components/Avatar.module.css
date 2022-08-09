@@ -1,0 +1,21 @@
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+}
+
+.avatarWithBorder {
+  /*
+    box-sizing: initial; Todo o tipo de borda, padding, margin e outline definidos no elemento 
+    vão passar a ocupar espaço externo a mais em vez de espremer o conteúdo interno, o que nesse 
+    caso faz distorcer a imagem interna presente no container. Utilizando essa propriedade, a width 
+    e o height definidos nas linhas seguintes podem ser de 3rem. Ainda existe uma outra forma de 
+    contornar o problema apenas calculando a largura e a altura em conjunto com a borda, fazendo 
+    com que essa propriedade css seja desnecessária (esse método foi aplicado, mas pode ser alterado)
+  */
+  width: calc(3rem + 12px);
+  height: calc(3rem + 12px);
+  border-radius: 8px; /* É comum utilizar px para bordas, pois difícilmente a borda deverá mudar quando o usuário alterar o font-size atual */
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500);  /* Basicamente adiciona uma nova borda a apos a borda definida na linha anterior (borda externa a borda) */
+}
